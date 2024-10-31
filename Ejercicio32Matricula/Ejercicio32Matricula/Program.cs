@@ -1,7 +1,23 @@
-﻿internal class Program
+﻿using Ejercicio32Matricula;
+
+internal class Program
 {
-    private static void Main(string[] args)
+    static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        do
+        {
+            Console.Clear();
+            Estudiante estudiante = new Estudiante();
+            estudiante.IngresarDatos();
+            estudiante.CalcularMatricula();
+            estudiante.MostrarResultados();
+        } while (DeseaContinuar());
+    }
+
+    static bool DeseaContinuar()
+    {
+        Console.Write("¿Desea calcular la matrícula de otro estudiante? (s/n): ");
+        string respuesta = Console.ReadLine().ToLower();
+        return respuesta == "s";
     }
 }
